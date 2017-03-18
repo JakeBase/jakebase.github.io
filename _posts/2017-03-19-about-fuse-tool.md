@@ -1,5 +1,3 @@
-# Fuse에 대해 알아보자
-
 - Fuse 소개(다른 자료로 대체)
   - Fuse 기본적인 기능들에 대한 guide
     - https://www.fusetools.com/docs/basics/feature-overview
