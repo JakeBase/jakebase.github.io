@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Fuse 소개"
+slug: "about-fuse-tool"
+date: 2017-03-19 01:00:00 +0900
+categories: blog
+---
+
 - Fuse 소개(다른 자료로 대체)
   - Fuse 기본적인 기능들에 대한 guide
     - https://www.fusetools.com/docs/basics/feature-overview
