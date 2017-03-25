@@ -2,7 +2,7 @@
 layout: post
 title: "드로이드 나이츠"
 slug: "droid-knights"
-date: 2017-03-25 01:00:00 +0900
+date: 2017-03-25 10:00:00 +0900
 categories: blog
 ---
 # Droid Knights
@@ -145,4 +145,133 @@ categories: blog
 - 자동화
   - 자동화가 목적은 아니다. 자동화는 목적을 해결하는 도구
   - CI != CI 시스템
-  - Jenkins
+- Jenkins
+  - 설정해줘야 하는 부분이 너무 많다
+- fastlane
+  - ios빌드에 많이 쓰인다
+  - 안드로이드는 supply, screengrab 두가지 정도 사용 가능
+- circleci
+  - 처음엔 travis를 고려했으니 너무 비싸고 안드로이드에선 별로임 그래서 circleci, 상용으로 많이 쓰고있어서 reference할만한게 많음
+  - 장점
+    - 각 빌드가 독립적으로 동작
+    - 모던한 UI
+    - 가격 적절 1달에 50달러
+    - circle.yml 설정 파일을 수정하는 것만으로 빌드 설정 적용 가능
+    - github과 유기적인 연동 가능
+  - github 루트 디렉토리에 놓으면 빌드가 된다
+    - 편하긴 한데 빌드 설정 바꿀때마다 git에 push해야함..
+  - keystore 저장을 위한 추가적인 저장소가 필요 -> 보통 dropbox사용
+- bitrise
+  - 기본은 무료(빌드 시간,횟수 제한), 1달 50달러
+  - 모바일 환경에 적합한 CI시스템
+  - Android, iOS CI preset이 잘 만들어져있다.
+  - Workflow 라는 과정이 명시적으로 있다
+  - secret environment 설정 가능. 필요하지만 공개되지 않았으면 하는 환경변수 설정 가능.
+  - 장점
+    - circle ci의 장점은 대부분 가지고있음
+    - 워크플로우를 UI로 조정가능
+    - fastlane을 자동화 툴로 지원
+    - 가장 많은 써드파티 연동 지원
+    - preset덕분에 극단적으로 빠르게 적용 가능
+    - docker 기반으로 circleci보다 빠른 느낌
+  - CI 서버에 테스트 : Roboletric 적용중
+  - AAR 같은 라이브러리는 어떻게?
+    - Bitray? 사용
+
+## UiAutomator와 AWS Device Farm 을 활용한 UI 테스팅 자동화
+
+- 수동테스트는 많은 인력과 시간이 필요함
+- 안드로이드는 각 기기별로 어떤 문제가 생길지 파악하기 힘듦
+- 자동화 테스트를 통해 이런 문제를 해결 가능하다
+- UiAutomator는 multiple vs Espresso는 single App에서
+  - Espresso는 화이트박스 테스트이고 해당 앱에서만 테스트 가능함
+  - UiAutomator는 blackbox 테스트, 사용자가 직접 테스트 하는것처럼 테스트 가능
+- 실제 사용자가 앱을 쓰는 시나리오처럼 테스트 하는게 목적이었다.
+- UiAutomator2
+  - By : BySelector 객체를 생성하는 유틸리티 클래스
+  - BySelector : 화면상에서 Ui요소를 찾기 위한 선택지
+  - UiDevice : 기기의 상태에 접근하고 기기를 제어하는 클래스
+  - UiObject2 : ?
+  - 이 네가지를 알면 웬만한건 모두 가능하다
+- 패키지
+  - 특정 패키지에 속하는 요소를 찾을 수 있다
+- 클래스
+  - 특정 클래스에 해당하는 요소를 찾을 수 있다
+- 컨텐트 설명
+  - 컨텐트 설명으로 요소를 찾을 수 있다
+- BySelector를 조합하면 모든 요소를 찾을 수 있다
+  - 이렇게 찾은 요소를 가지고 테스트를 하면된다
+- UI 동기화를 시켜줘야 fail이 잘 안난다
+- 애니메이션은 꼭 비활성화를 시키고 하는게 좋다
+  - 기기는 직접 끄면 됨
+  - 서버에서 테스트 할때는 코드로 처리해야함
+- 클라우드 테스팅
+  ```text
+  - AWS : 기기도 많고 버전도 다양함, 거의 모든 폰 테스트 가능
+  - firebase testlab : 기기가 적음
+  - xamarin test cloud : CI 서버 사용이 제한적임
+  ```
+  - AWS로 선정!
+  - UiAutomator2부터는 APK파일을 업로드 해주면 된다
+    - assemble android test -> enable
+  - device 선택가능
+
+## Anatomy of Realm (Realm 심층 분석)
+
+- Realm Mobile Platform
+  - 전통적인 REST 서버를 사용할때 생기는 불편한 점들을 없애줌
+  - 로컬, 서버사이드 서버가 같음
+- Realm Mobile Database는 어떤식으로 구성되어있나?
+- Realm 모바일 객체의 특성
+- 왜 그렇게 하는건가요?
+1. 무복제 매커니즘 : 자바로 데이터를 복사하지 않는 것
+- Facebook 사례
+  - json 인코딩 디코딩에 많은 시간이 들었음
+  - google의 flatbuffer를 이용하기로 결정
+- Hydrate
+  - 일반적인 데이터베이스 사용시 쿼리된 결과를 문자열이나 인코딩된 형태로 가져옴
+  - 결과를 파싱, 디코딩해서 객체에 할당해줌
+  - 이런 수화과정이 CPU와 메모리를 낭비함, 쓰지도 않을 데이터를 전부 변환하고 필드에 담았음.
+- Realm은 무 복제 메커니즘을 사용한다
+  - 로우와 컬럼을 이용해서 데이터를 가져옴
+  - 사용자의 RealmObject를 가지고 RealmProxyObject를 만든다
+  - APT를 이용함
+  - Realm은 어떤 어노테이션 프로세스를 실행할지 결정하는 메타데이터가 있다
+    > 앱에서 반복적으로 하는 작업이 있다면 APT를 만들어보세요
+- APT만으론 부족하다
+  - APT는 객체를 생성할 수만있다, 기존 객체를 상속받고 변경하는게 불가능
+    - 그래서 예전 Realm은 getter,setter를 정해진 이름만 사용하도록 요구했음
+- Byte code를 변경하는 것이 해결책
+  - Lazy하게 custom getter,setter를 호출하는 것이 가능
+- 트랜스포머 API
+  - 간단하게 바이트코드를 변환할 수 있다
+2. 크로스 플랫폼
+3. 자동 갱신
+- 베리 빅, 빅+ 트리
+- 최근 데이터베이스에선 한column씩 저장하는 추세, padding을 따로 넣을 필요가 없고
+  - 멀티 스레딩을 고려하면 같은 필드끼리 묶어서 저장하는게 나을 수 있음
+- MVCC
+  - 새 쓰기는 새 스냅샷을 만든다
+  - 쓰기중에도 읽기가 가능하다.
+  - 읽기는 배타적이지 않음
+- Gradle Plugin
+  - 환경별로 어노테이션 설치는 사용자에게 어렵다.
+  - Plugin 만들기
+    - Plugin 객체 상속
+    - Apply 메소드 구현
+- Realm Core와 Realm Java는 오픈소스입니다
+
+## KeyFrame과 Lottie로 인터렉티브한 애니메이션을 구현해보기
+
+- KeyFrame과 Lottie
+  - AfterEffect기준으로 기능들이 만들어짐
+  - Lottie에선 keyframe에서 안되는게 다 가능함
+  - 그래서 Lottie로 발표함ㅎ
+- Lottie 라이브러리 사용하기
+  - AfterEffect, Body-Movin Plugin, ? 가 필요함
+- 끊기지 않게 하려면 24프레임 이상만 설정하면 된다
+- AfterEffect에서 json파일을 생성 -> 안드로이드 Asset에 넣으면 사용 가능
+- 어디에 사용할 수 있을까?
+  - Android Material Stepper, 간단하게 stepper형태의 애니메이션을 구현할 수 있는 라이브러리
+  - 내가 원하는 frame만큼 재생을 하고 중지 시킬 수 있다.
+- http://www.lottiefiles.com
