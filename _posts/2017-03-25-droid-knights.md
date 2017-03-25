@@ -129,3 +129,20 @@ categories: blog
   - 실제 장점은 서버 개발자가 아니라 운영팀에서 config설정을 바꿀 수 있다는 점 정도인듯
 - 단점
   - Test가 불가능함~
+
+## 빠르고 지속적으로 전달하기: Continuous Delivery for Android
+
+- 캐시 슬라이드 , 2주에 한번씩 업데이트 진행, 반복되는 작업이 많다
+- 소프트웨어 개발 파이프라인
+  - Commit - Build - Test - Deploy
+- Continuous Integration
+  - 새로운 빌드와 단위 테스트
+- Continuous Delivery
+  - 지속적인 통합, 자동화 테스트, 배포
+  - 최소한의 수동 오버헤드로 제품을 배포 가능하게 하는 것
+- Continuous Deployment
+  - 패키징
+- 자동화
+  - 자동화가 목적은 아니다. 자동화는 목적을 해결하는 도구
+  - CI != CI 시스템
+  - Jenkins
