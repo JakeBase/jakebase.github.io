@@ -38,16 +38,22 @@ public class MyApplication extends Application {
 }
 ```
 
-dumpapp 사용
+dumpapp 사용 설정
 ```
 $ git clone https://github.com/facebook/stetho.git
 $ cd stetho/scripts
-$ ./dumpapp -l
 ```
 
+dumpapp 플러그인 출력
+```
+$ ./dumpapp -l
+```
+![플러그인_리스트]({{ site.url }}/images/dumpapp/dumapp-list.png)
+현재 사용가능한 플러그인 리스트가 나타납니다. 
 
-![스크린샷]({{ site.url }}/images/dumpapp/dumapp-list.png)
-위와 같이 `./dumpapp -l`를 입력하면 현재 사용가능한 플러그인 리스트가 나타납니다
+![pref_리스트]({{ site.url }}/images/dumpapp/dumpapp-pref.png)
+현재 사용가능한 플러그인 리스트가 나타납니다. 
+
 
 # References
 
