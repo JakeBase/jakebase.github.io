@@ -48,11 +48,17 @@ dumpapp 플러그인 출력
 ```
 $ ./dumpapp -l
 ```
-![플러그인_리스트]({{ site.url }}/images/dumpapp/dumapp-list.png)
+![플러그인_리스트]({{ site.url }}/images/dumpapp/dumpapp-list.png)
 현재 사용가능한 플러그인 리스트가 나타납니다. 
 
 ![pref_리스트]({{ site.url }}/images/dumpapp/dumpapp-pref.png)
-현재 사용가능한 플러그인 리스트가 나타납니다. 
+SharedPreference에 저장된 값들이 출력됩니다.
+
+![pref_리스트]({{ site.url }}/images/dumpapp/dumpapp-pref2.png)
+pref 명령어를 통해 SharedPreference myname에 저장된 값을 junki에서 other로 바꿔보았습니다. 이같은 기능을 이용하면 앱 테스트중 SharedPreference의 값을 바꾸고 싶을 때 쉽게 테스트가 가능합니다.
+
+![pref_devtool]({{ site.url }}/images/dumpapp/dumpapp-devtool.png)
+chrome developer tool에서도 pref값이 제대로 바뀐걸 확인할 수 있습니다.
 
 
 # References
