@@ -1,29 +1,56 @@
 ---
 layout: post
-title: "Stetho로 SharedPreference 제어하기"
+title: "Stetho 확장하여 사용하기, Dumpapp"
 slug: "stetho-dumpapp"
 date: 2017-03-25 10:00:00 +0900
 categories: blog
 ---
-# Stetho로 SharedPreference 값 변경하기
+# Stetho 확장하여 사용하기, Dumpapp
 
-오늘은 짧지만 유용한 팁을 하나 가져와봤습니다. 결론부터 말씀드리면 Stetho를 이용해 SharedPreference 값을 임의로 바꿔줄 수 있습니다.
+오늘은 Stetho를 확장하여 추가적인 기능을 구현하는 방법에 대해 알아보려고 합니다.
+좀 더 정확히 이야기 하자면, stetho의 dumpapp 기능을 이용해서 다음과 같은 일이 가능합니다.
 
-그게 유용해?라고 하실수도 있지만.. SharedPreference 값을 바꿔가면서 개발해야 할 때는 꽤 유용할 것 같습니다.
-
-최근에 최초 실행 시 한번만 노출되는 튜토리얼 페이지 작업을 할 때 shown flag로 SharedPreference를 사용했는데
-
-수정 사항이 제대로 반영됐는지 보려면 앱관리자에서 캐시데이터를 삭제하거나, flag가 false이게 코드를 잠시 수정한다던지 하는 귀찮은 부분이 조금 있었습니다.
+- 디버깅 중인 앱의 SharedPreference 값을 임의로 바꿔줄 수 있습니다
+- 디버깅 중인 앱에 Toast를 띄울 수 있습니다
+- Dumpapp plugin을 구현한다면 다른 작업들도 추가적으로 구현할 수 있습니다
 
 Stetho의 강력한 기능들에 대해선 얼마전에 Android Yobi에 간략한 소개와 함께 공유한 적이 있었는데요, 오늘은 dumpapp 기능에 대해 조금 자세히 다뤄보려고 합니다.
 
 (Stetho 설정 방법이나 사용법은 아래 링크에서 확인가능합니다~ )
-
 > http://yobi.navercorp.com/Mobile/Android/post/127
 
 # dumpapp?
 
-공식 사이트의 설명에 따르면 dumpapp은 chrome의 developer tool 보다 더 확장된 기능을 원하는 개발자들에게 
+dumpapp은 stetho사용 시 chrome developer tool의 기능을 확장할 수 있게 해주는 커맨드라인 기반의 기능입니다. 기본적으로 stetho에서 제공해주는 기본적인 몇가지 plugin이 있고, 개발자가 추가적으로 dumpapp plugin을 만들어 기능을 확장할 수 있습니다.
 
-제공되는 커맨드 라인 기반의 확장 기능입니다. 기본적으로 몇가지 기능이 제공되고 더 중요한 점은 직접 dumpapp plugin을 만들 수 있다는 것입니다.
+- 커맨드라인에서 stetho를 이용해 미리 구현한 로직을 호출하는 방식입니다
+- python script가 stetho를 설정할 때 등록한 플러그인을 호출해줍니다
+- 실행하려면 python script가 필요합니다
+- python 3.x가 설치되어있어야합니다 ( https://www.python.org/downloads/ )
 
+Stetho 기본 설정
+```java
+public class MyApplication extends Application {
+    public void onCreate() {
+        super.onCreate();
+        Stetho.initializeWithDefaults(this);
+    }
+}
+```
+
+dumpapp 사용
+```
+$ git clone https://github.com/facebook/stetho.git
+$ cd stetho/scripts
+$ ./dumpapp -l
+```
+
+
+![스크린샷]({{ site.url }}/images/dumpapp/dumapp-list.png)
+위와 같이 `./dumpapp -l`를 입력하면 현재 사용가능한 플러그인 리스트가 나타납니다
+
+# References
+
+- https://www.slideshare.net/kingori/ss-68326596
+- https://realm.io/kr/news/mobilization-gautier-mechling-the-2016-android-developer-toolbox/
+- https://www.youtube.com/watch?v=iyXpdkqBsG8
