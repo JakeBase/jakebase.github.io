@@ -5,13 +5,12 @@ slug: "stetho-dumpapp"
 date: 2017-03-25 10:00:00 +0900
 categories: blog
 ---
-# Stetho 확장하여 사용하기, Dumpapp
 
 오늘은 Stetho를 확장하여 추가적인 기능을 구현하는 방법에 대해 알아보려고 합니다.
 좀 더 정확히 이야기 하자면, stetho의 dumpapp 기능을 이용해서 다음과 같은 일이 가능합니다.
 
-- 디버깅 중인 앱의 SharedPreference 값을 임의로 바꿔줄 수 있습니다
-- 디버깅 중인 앱에 Toast를 띄울 수 있습니다
+- 실행중인 앱의 SharedPreference 값을 임의로 바꿔줄 수 있습니다
+- 실행중인 앱에 Toast를 띄울 수 있습니다
 - Dumpapp plugin을 구현한다면 다른 작업들도 추가적으로 구현할 수 있습니다
 
 Stetho의 강력한 기능들에 대해선 얼마전에 Android Yobi에 간략한 소개와 함께 공유한 적이 있었는데요, 오늘은 dumpapp 기능에 대해 조금 자세히 다뤄보려고 합니다.
@@ -119,7 +118,7 @@ Stetho.initialize(Stetho.newInitializerBuilder(this)
 ![dumpapp_custom]({{ site.url }}/images/dumpapp/dumpapp-custom.png)
 
 # 어떤게 더 가능한가?
-위와 같은 방식으로 다양한 plugin 제작이 가능하므로 앱 디버깅중 토스트 띄우거나, 특정 상황에서 테스트 코드를 수행시키는 등 정말 다양한 작업이 가능할 것 같습니다. 디버깅을 위한 코드가 앱 코드에 추가된다는 점이 조금 찝찝하지만 debug일 때만 빌드되게 설정한다면 크게 문제는 없을 것 같습니다. 
+위와 같은 방식으로 다양한 plugin 제작이 가능하므로 앱 디버깅중 토스트 띄우거나, 특정 상황에서 테스트 코드를 수행시키는 등 정말 다양한 작업이 가능할 것 같습니다. 디버깅을 위한 코드가 앱 코드에 추가된다는 점이 조금 찝찝하지만 debug일 때만 빌드되게 설정한다면 크게 문제는 없을 것 같습니다.
 
 # References
 
