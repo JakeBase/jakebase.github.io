@@ -5,7 +5,7 @@ slug: "android-systrace"
 date: 2017-04-19 21:00:00 +0900
 categories: blog
 ---
-# Android Systrace
+### Android Systrace
 
 다양한 안드로이드 Profiling Tool중에 오늘은 Systrace에 대해서 알아보려고 합니다.
 
@@ -15,7 +15,7 @@ categories: blog
 
 그 외에도 CPU usage, threads, ui renderer 등에 다양한 분석 정보를 보여주고 있습니다.
 
-## 시작하기
+#### 시작하기
 
 1. Android Device Monitor 실행<br>
 <img src="https://developer.android.com/images/tools/performance/systrace/gettingstarted_image001.png">
@@ -28,7 +28,7 @@ categories: blog
 <img src="https://developer.android.com/images/tools/performance/systrace/gettingstarted_image004.png">
 
 
-## 분석하기
+#### 분석하기
 
 trace가 끝나면 setting에서 지정한 경로에 html파일이 저장되는데 이파일을 열면 trace정보가 나옵니다.
 
@@ -38,17 +38,17 @@ trace가 끝나면 setting에서 지정한 경로에 html파일이 저장되는�
 
 중요한 부분만 몇가지 살펴 보면,
 
-#### Alerts
+##### Alerts
 
 분석결과를 토대로 Performance에 문제가 생길만한 부분을 체크해서 알려줍니다. Alerts에 표시된 아이콘을 클릭하면 어느 부분에서 문제가 생겼는지, 어떤 부분이 문제인지, 그리고 그와 관련된 Android Performance Pattern 영상을 추천해줍니다.
 ![alerts]({{ site.url }}/images/systrace/alerts.png)
 
-#### Frames
+##### Frames
 
 Frame drop이 발생하는 부분에 대해서 색상으로 알려줍니다. Frame drop에 영향을 주준 부분은 아래 항목들을 통해 알 수 있습니다.
 ![frames]({{ site.url }}/images/systrace/alerts.png)
 
-#### 단축키
+##### 단축키
 
 보기는 좋지만 생각보다 조작이 불편합니다;; 그래서 단축키가 매우 중요합니다.
 
@@ -69,19 +69,19 @@ Frame drop이 발생하는 부분에 대해서 색상으로 알려줍니다. Fra
 | Left Arrow  | 선택한 타임라인의 이전 이벤트 선택                        |
 
 
-## 성능 개선 사례
+#### 성능 개선 사례
 
 최근 뮤직앱 개편 작업을 하면서 잠금화면에서 곡 전환시 있던 delay time을 없앴는데요, 기존에는 다음곡 버튼을 누르면 500ms 후에 화면 전환이 이루어졌는데 이 delay를 없애면서 화면 곡 변경시 일어나는 이벤트(재생 곡 변경, 배경 색 변경 등) 가 연속으로 발생할 수 있게 되면서 기존에는 느낄 수 없던 성능상 문제가 눈에 띄게 되었습니다.
 
 그래서 Systrace를 사용해봤습니다. trace중 동작은 잠금화면의 다음곡 버튼을 빠르게 연속해서 누르는 것이었습니다.
 
-### 개선 전 trace log
+##### 개선 전 trace log
 
 결과는 제가 느끼는 것보다 심각했습니다. frame drop을 나타내는 빨간 F 아이콘이 한눈에 봐도 너무 많았습니다.
 
 ![frames]({{ site.url }}/images/systrace/trace1.png)
 
-### 뭐가 문제일까?
+##### 뭐가 문제일까?
 
 trace log를 살펴보고 두가지 문제점을 발견했고 이를 수정했습니다.
 
@@ -138,11 +138,12 @@ Animation이 이미 실행중이면 취소하는 위 코드를 추가했고 아�
 ![result2]({{ site.url }}/images/systrace/result_frame.png)
 
 
-## 마치며
+#### 마치며
 
 systrace를 이용해 놓쳤던 부분들을 찾고 수정하면서 프로파일링의 중요성을 다시 깨달았습니다 ㅎㅎ. Colt McAnlis 아저씨가 systrace를 계속 강조한 이유를 알것같습니다. 
 
-## Reference
+#### Reference
+
 - https://developer.android.com/studio/profile/systrace-commandline.html
 - https://developer.android.com/studio/profile/systrace.html
 - http://lunchtimecoding.tistory.com/4

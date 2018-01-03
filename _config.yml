@@ -1,114 +1,27 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
 # Permalinks
-#
-# Use of `relative_permalinks` ensures post links from the index work properly.
-#permalink:           pretty
-permalink: /blog/:year/:month/:day/:title/
-relative_permalinks: false
-encoding: utf-8
+permalink:        pretty
 
 # Setup
-title: kimtonic Tech Blog
-#tagline: 'foo's website
-description: kimtonic의 기술 블로그입니다. 다양한 개발 관련 자료를 다룹니다.
-url: https://kimtonic.github.io
-baseurl: ""
-urlimg: https://kimtonic.github.io/images/
-## If you do not have custom domain, comment top three lines, uncomment three lines below and replace dyndna with your github userid and lanyon-plus with your project name. Also, rename CNAME file to CNAME.sample
-#url: https://dyndna.github.io/lanyon-plus
-#baseurl: "/lanyon-plus"
-#urlimg: https://dyndna.github.io/lanyon-plus/images/
-markdown: kramdown
-paginate: 5
-paginate_path: "/blog/page:num"
-excerpt_separator: <!--more-->
-default_bg: sitebg.jpg
-default_logo: sitelogo.png
-safe: false
-timezone:    Asia/Seoul
-future:      true
+title:            Jake
+tagline:          'base'
+description:      'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
+url:              http://JakeBase.github.io
 
-
-## code highlight options
-syntax_highlighter: rouge
-input: GFM
-
-gems:
-  - jekyll-paginate
-  - jemoji
-  - font-awesome-sass
-  - kramdown
-  - rouge
-  - jekyll-mentions
-
-jekyll-mentions:
-  base_url: https://twitter.com
-
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "rakefile", "README.md", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "LICENSE", "vendor", "assets", "_plugins", "public/dormant"]
-
-# About/contact
 author:
-  name:              kimtonic
-  url:               https://kimtonic.github.io
-  avatar:         foo.png
-  #email:           
+  name:           'Mark Otto'
+  url:            http://JakeBase.github.io
 
-# Owner/author information
-owner:
-  name:           kimtonic
-  avatar:         foo.png
-  #email:          
-  # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:
-  # Social networking links used in footer. Update and remove as you like.
-  twitter:        abcd
-  facebook:       
-  github:         https://www.github.com/kimtonic
-  stackexchange:  
-  linkedin:       
-  instagram:      
-  flickr:
-  tumblr:  
-  google_plus:    
-  # orcid and google scholar IDs are different than standard username.
-  orcid: 
-  gscholar: 
+paginate:         5
 
-## sidebar links:
-# For external links add external: true
-links:
-  - title: <i class="iconside iconm-home"></i> Home
-    url: /
-  - title: <i class="iconside iconm-user"></i> About
-    url: /about/
-  - title: <i class="iconside iconm-quill"></i> Blog
-    url: /blog/
-  - title: <i class="fa fa-tags"></i> Tags
-    url: /tags/
-  - title: <i class="fa fa-archive"></i> Archive
-    url: /archive/
-  - title: <i class="iconside iconm-wordpress"></i> Old Blog
-    url: https://foo.wordpress.com
-    external: true
-  - title: <i class="iconside iconm-envelop"></i> Contact
-    url: /contact/
-  - title: <i class="iconside iconm-twitter"></i> Twitter
-    url: https://twitter.com/abcd
-    external: true
-  - title: <i class="iconside iconm-feed2"></i> Feed
-    url: /feed.xml
+# Custom vars
+version:          2.0.0
 
-# Google Custom Search:
-#google_search: xyz123abc
+github:
+  repo:           https://github.com/JakeBase
 
-# Twitter stream widget:
-# Replace xyz123abc with your twitter widget id from https://twitter.com/settings/widgets
-#twitter_widget_id: xyz123abc
-
-# Add disqus username for Disqus comment board:
-disqus_shortname: foo
-
-# Analytics and webmaster tools stuff goes here
-#google_analytics:   xyz123abc
-
-## END ##
+# Gems
+gems: [jekyll-paginate]
