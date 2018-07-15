@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Fuse 간단 조사"
-tags: [fuse]
+tags: [Fuse]
 comments: true
 ---
 
