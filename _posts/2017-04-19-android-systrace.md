@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "안드로이드 Systrace"
-slug: "android-systrace"
-date: 2017-04-19 21:00:00 +0900
-categories: blog
+title: "Android Systrace"
+tags: [Android]
+comments: true
 ---
 
 ### Android Systrace

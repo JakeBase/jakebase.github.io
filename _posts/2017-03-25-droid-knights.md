@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "드로이드 나이츠 후기"
-slug: "droid-knights"
-date: 2017-03-25 10:00:00 +0900
-categories: blog
+tags: [Android, Conference, Kotlin, RxJava]
+comments: true
 ---
 
 ## Compose everything with rx & kotlin , 허재위

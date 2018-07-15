@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "Fuse 소개"
-slug: "about-fuse-tool"
-date: 2017-03-19 01:00:00 +0900
-categories: blog
+title: "Fuse 간단 조사"
+tags: [fuse]
+comments: true
 ---
 
 - Fuse 소개(다른 자료로 대체)

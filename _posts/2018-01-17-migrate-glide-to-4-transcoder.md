@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "Glide 4 적용하기 - 1. Transcoder"
-slug: "migrate-glide-to-4-transcoder"
-date: 2018-01-17 21:00:00 +0900
-categories: blog
+title: "Glide 4 - Transcoder"
+tags: [Android, Glide]
+comments: true
 ---
 
 ### Glide 3.x 에서 4.x 으로 마이그레이션 하기
