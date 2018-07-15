@@ -1,14 +1,12 @@
 ---
 layout: post
-title: "드로이드 나이츠"
+title: "드로이드 나이츠 후기"
 slug: "droid-knights"
 date: 2017-03-25 10:00:00 +0900
 categories: blog
 ---
-# Droid Knights
 
 ## Compose everything with rx & kotlin , 허재위
-
 - Rx자바의 함정
   - 메모리 릭이 있다. Stream을 취소해주지 않으면 예전에 돌던 작업이 계속 됨.
   - CompositeDisposable이라는 어레이에 스트림들을 넣고 나중에 한번에 취소해준다?
@@ -29,7 +27,6 @@ categories: blog
   - 옳은 방향인가? 그런듯하다
 
 ## Clean Architecture in Android, 황성현
-
 - 개선되고 변화하는 제품, 코드가 계속 변화한다.
 - 변화하는 코드에 대응할 수 있는 아키텍쳐는 무엇인가?
   - 변화에 따른 코드의 변경이 적다.
@@ -76,7 +73,6 @@ categories: blog
 - 문서 중간쯤 보면 gradle 어떻게 설정하는지 나옴, 근데 이것도 옛날 내용
 
 ## 파이어베이스를 실제 모바일 백엔드로 사용하면 일어날 수 있는 일들
-
 - 클라이언트 개발자가 서버 관련 작업을 할 수 있다.
 - 보안이 좋다
 - Firebase 데이터베이스
@@ -104,7 +100,6 @@ categories: blog
   - Paas.com 서비스 접었던 사례가 있음
 
 ## Firebase Remote Config로 배포없이 앱 운영하기
-
 - 실시간에 가깝게 사용자에게 피드백하는 것이 중요하다
   - 불만이 늘어나는 시간을 줄이는 것
   - 앱은 실시간으로 대응하기에는 배포가 무겁다
@@ -131,7 +126,6 @@ categories: blog
   - Test가 불가능함~
 
 ## 빠르고 지속적으로 전달하기: Continuous Delivery for Android
-
 - 캐시 슬라이드 , 2주에 한번씩 업데이트 진행, 반복되는 작업이 많다
 - 소프트웨어 개발 파이프라인
   - Commit - Build - Test - Deploy
@@ -179,7 +173,6 @@ categories: blog
     - Bitray? 사용
 
 ## UiAutomator와 AWS Device Farm 을 활용한 UI 테스팅 자동화
-
 - 수동테스트는 많은 인력과 시간이 필요함
 - 안드로이드는 각 기기별로 어떤 문제가 생길지 파악하기 힘듦
 - 자동화 테스트를 통해 이런 문제를 해결 가능하다
@@ -217,7 +210,6 @@ categories: blog
   - device 선택가능
 
 ## Anatomy of Realm (Realm 심층 분석)
-
 - Realm Mobile Platform
   - 전통적인 REST 서버를 사용할때 생기는 불편한 점들을 없애줌
   - 로컬, 서버사이드 서버가 같음
@@ -262,7 +254,6 @@ categories: blog
 - Realm Core와 Realm Java는 오픈소스입니다
 
 ## KeyFrame과 Lottie로 인터렉티브한 애니메이션을 구현해보기
-
 - KeyFrame과 Lottie
   - AfterEffect기준으로 기능들이 만들어짐
   - Lottie에선 keyframe에서 안되는게 다 가능함

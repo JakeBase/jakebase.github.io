@@ -20,7 +20,7 @@ avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/je
 # and URL Link(e.g. 'Theme' tab below) tabs. If you don't need one, just delete
 # it from the list(Delete '- name: ' and 'url: ', too!)
 navigation:
-  - name: Blog
+  - name: Post
     url: /
   - name: About
     url: /about
@@ -41,7 +41,7 @@ footer-links:
   email:
   facebook:
   flickr:
-  github: https://www.github.com/jakebase
+  github: jakebase
   googleplus: # anything in your profile username that comes after plus.google.com/
   instagram:
   linkedin:
@@ -49,7 +49,7 @@ footer-links:
   rss: # just type anything here for a working RSS icon
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   tumblr: # https://<username>.tumblr.com
-  twitter: jekyllrb
+  twitter: 
   youtube: # channel/<your_long_string> or user/<user-name>
 
 # Text under the icons in footer

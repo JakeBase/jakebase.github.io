@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+매일 발전하는게 목표인 3년차 안드로이드 개발자
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+RxJava, Kotlin, AAC, Clean Architecture 등에 관심이 많습니다.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[jakekim0690@gmail.com](mailto:jakekim0690@gmail.com)

@@ -5,10 +5,9 @@ slug: "android-systrace"
 date: 2017-04-19 21:00:00 +0900
 categories: blog
 ---
+
 ### Android Systrace
-
 다양한 안드로이드 Profiling Tool중에 오늘은 Systrace에 대해서 알아보려고 합니다.
-
 이미 잘 사용하고 계시겠지만 최근 Systrace를 이용해 Jank가 발생하는 부분을 발견하고 수정한(다행히도 배포 전에..) 경험이 있어 함께 공유하고자 합니다.
 
 구글I/O 2015에서 구글은 Systrace의 업데이트를 발표했는데요, 이 업데이트부터 Systrace는 화면에 그려지는 Frame에 대한 지연 정보를 포함하여 더 쉽게 UI문제를 찾아낼 수 있게 됐습니다.

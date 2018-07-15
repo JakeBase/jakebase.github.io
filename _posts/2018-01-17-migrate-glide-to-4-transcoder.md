@@ -6,8 +6,6 @@ date: 2018-01-17 21:00:00 +0900
 categories: blog
 ---
 
-![Glide Logo](https://raw.githubusercontent.com/bumptech/glide/master/static/glide_logo.png)
-
 ### Glide 3.x 에서 4.x 으로 마이그레이션 하기
 기본적으로 Glide 4.x 의 사용방법은 Glide 3.x 와 크게 다르지 않다. [공식 페이지](http://bumptech.github.io/glide/doc/migrating.html) 에서도 migration 방법에 대해 자세히 안내하고 있다. 이 포스팅에서는 공식 가이드에서 자세히 설명되어 있지 않은 Transcoder, Transition, Option 등에 대해 기록해보고자 한다.
 
