@@ -15,9 +15,6 @@ categories: blog
 
 Stetho의 강력한 기능들에 대해선 얼마전에 Android Yobi에 간략한 소개와 함께 공유한 적이 있었는데요, 오늘은 dumpapp 기능에 대해 조금 자세히 다뤄보려고 합니다.
 
-(Stetho 설정 방법이나 사용법은 아래 링크에서 확인가능합니다~ )
-> http://yobi.navercorp.com/Mobile/Android/post/127
-
 # dumpapp?
 
 dumpapp은 stetho사용 시 chrome developer tool의 기능을 확장할 수 있게 해주는 커맨드라인 기반의 기능입니다. 기본적으로 stetho에서 제공해주는 기본적인 몇가지 plugin이 있고, 개발자가 추가적으로 dumpapp plugin을 만들어 기능을 확장할 수 있습니다.
