@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "안드로이드 스튜디오(IntelliJ) 유용한 단축키 및 설정 1"
+title: "안드로이드 스튜디오(IntelliJ) 유용한 단축키 및 설정"
 tags: [Android, Android Studio, IntelliJ]
 comments: true
 ---
